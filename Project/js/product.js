@@ -62,13 +62,14 @@ class GoodsList {
     }
     init(){
         this._fetchGoods();
-        this._render();
+        // this._render();
         // this._fetchGoods(this._render());
     }
     _fetchGoods(){
         makeGETRequest(`${API_url}/CatalogData.json`, (goods) => {
             this.goods = JSON.parse(goods);
             console.log(this.goods);
+            this._render();
         }) 
     }
     _render(){
