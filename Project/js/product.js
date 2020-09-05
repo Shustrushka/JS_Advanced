@@ -79,5 +79,4 @@ class GoodsList {
         }
     }
 }
-
 const list = new GoodsList();
