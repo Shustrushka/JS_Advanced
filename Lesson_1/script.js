@@ -4,7 +4,6 @@ const goods = [
   { title: 'Jacket', price: 350 },
   { title: 'Shoes', price: 250 },
 ];
-
 class GoodsItem {
   constructor(title = 'No title', price = "Call", img = 'https://placehold.it/150x150') {
     this.title = title;
