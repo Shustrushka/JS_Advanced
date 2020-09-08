@@ -429,8 +429,8 @@
                         <p>Sort By</p><a href="#">Name</a>
                    </div>
                    <div class="sortby_form">
-                        <form action="#" method="POST" class="search-form">
-                            <input type="text" class="search-field">
+                        <form action="#" method="POST" class="search-form" @submit.prevent="filter">
+                            <input type="text" class="search-field" v-model="userSearch">
                             <button class="btn-search" type="submit"><i class="fas fa-search"></i></button>
                         </form> 
                    </div>
@@ -550,6 +550,7 @@
         </div>
         </div>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script defer src="js\product.js"></script>
 </body>
 </html>

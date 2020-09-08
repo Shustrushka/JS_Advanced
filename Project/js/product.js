@@ -16,19 +16,19 @@ class List { //глобальный общий класс со списком, �
     calcSum(){
         return this.allProducts.reduce((accum, item) => accum + item.price, 0);
     }
-    filter(value){
-        const regexp = new RegExp(value, 'i');
-        this.filtered = this.allProducts.filter(el => regexp.test(el.title));
-        console.log(this.filtered);
-        this.allProducts.forEach(el => {
-            const block = document.querySelector(`.product__main__items[data-id="${el.id}"]`);
-            if(!this.filtered.includes(el)){
-                block.classList.add('invisible');
-            } else {
-                block.classList.remove('invisible');
-            }
-        })
-    }
+    // filter(value){
+    //     const regexp = new RegExp(value, 'i');
+    //     this.filtered = this.allProducts.filter(el => regexp.test(el.title));
+    //     console.log(this.filtered);
+    //     this.allProducts.forEach(el => {
+    //         const block = document.querySelector(`.product__main__items[data-id="${el.id}"]`);
+    //         if(!this.filtered.includes(el)){
+    //             block.classList.add('invisible');
+    //         } else {
+    //             block.classList.remove('invisible');
+    //         }
+    //     })
+    // }
     getJson(url){
         return fetch(url ? url : `${API_url+this.url}`)
         .then(result => result.json())
@@ -50,27 +50,7 @@ class List { //глобальный общий класс со списком, �
         return this.allProducts.find(el => el.id === id);
     }
 }
-// function makeGETRequest(url) {
-//     return new Promise((resolve, reject) => {
-//         let xhr;
-//         if (window.XMLHttpRequest) {
-//           xhr = new XMLHttpRequest();
-//         } else if (window.ActiveXObject) { 
-//           xhr = new ActiveXObject("Microsoft.XMLHTTP");
-//         }
-//         xhr.onreadystatechange = () => {
-//             if(xhr.readyState === 4)  {
-//                 if(xhr.status !== 200) {
-//                     reject('error');
-//             } else {
-//                 resolve(xhr.responseText);
-//             }
-//           }
-//         }
-//           xhr.open('GET', url, true);
-//           xhr.send();
-//     });
-//   };
+
 class Item {
     constructor(el = { id: 'ID', title: 'NoName', img: 'https://via.placeholder.com/263x280', price: 'call' }){
         this.title = el.title;
@@ -106,11 +86,11 @@ class Products extends List { // GoodsList = Products
                 const id = +event.target.dataset[id];
                 cart.addProduct(this.getItem(id));
             }
-        })
-        document.querySelector(`.search-form`).addEventListener('submit', e => {
-            e.preventDefault();
-            this.filter(document.querySelector(`.search-field`).value);
-        })
+        });
+        // document.querySelector(`.search-form`).addEventListener('submit', e => {
+        //     e.preventDefault();
+        //     this.filter(document.querySelector(`.search-field`).value);
+        // })
     }
 }
 class Cart extends List {
@@ -161,4 +141,17 @@ class CartItem extends Item {
     }
 }
 // const cart = new Cart();
+
 const list = new Products();
+
+const app = new Vue({
+    el: '.search-field',
+    data: {
+        userSearch: '',
+        filtered: []
+    },
+    filter(){
+        let regExp = new RegExp(this.userSearch, 'i');
+        this.filtered = this.products.filter(el => regexp.test(el.title));
+    }
+});
