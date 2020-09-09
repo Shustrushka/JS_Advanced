@@ -23,6 +23,7 @@
                 </form>
             </div>
             <div class="header__block">
+                <div class="cart-block invisible"></div>
                 <a href="#" ><img src="img/cart.svg" alt="cart" class="cart-img"></a>
                 <a href="#" class="button">My Account</a>
             </div>
@@ -427,6 +428,13 @@
                    <div class="sortby_text">
                         <p>Sort By</p><a href="#">Name</a>
                    </div>
+                   <div class="sortby_form">
+                        <form action="#" method="POST" class="search-form" @submit.prevent="filter">
+                            <input type="text" class="search-field" v-model="userSearch">
+                            <button class="btn-search" type="submit"><i class="fas fa-search"></i></button>
+                        </form> 
+                   </div>
+                   
                 </div>
             </div>
             
@@ -542,6 +550,7 @@
         </div>
         </div>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script defer src="js\product.js"></script>
 </body>
 </html>
