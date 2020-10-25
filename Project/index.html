@@ -18,40 +18,77 @@
                 <form class="header__form" action="#">
                     <div class="form__browse">
                         <a class="browse_link" href="#">Browse &#9660;</a>
+                        <div class="drop-down">
+                            <div class="drop-down__flex">
+                               <h3 class="drop-down__h3">Women</h3>
+                                <ul class="drop-down__ul">
+                                   <li class="drop-down__li"><a href="#" class="drop-down__link">Dresses</a></li>
+                                   <li class="drop-down__li"><a href="#" class="drop-down__link">Tops</a></li>
+                                   <li class="drop-down__li"><a href="#" class="drop-down__link">Sweaters/Knits</a></li>
+                                   <li class="drop-down__li"><a href="#" class="drop-down__link">Jackets/Coats</a></li>
+                                   <li class="drop-down__li"><a href="#" class="drop-down__link">Blazers</a></li>
+                                   <li class="drop-down__li"><a href="#" class="drop-down__link">Denim</a></li>
+                                   <li class="drop-down__li"><a href="#" class="drop-down__link">Leggings/Pants</a></li>
+                                   <li class="drop-down__li"><a href="#" class="drop-down__link">Skirts/Shorts</a></li>
+                                   <li class="drop-down__li"><a href="#" class="drop-down__link">Accessories </a></li>
+                                </ul>
+                            </div>
+                    <div class="drop-down__flex">
+                               <h3 class="drop-down__h3">Men</h3>
+                                <ul class="drop-down__ul">
+                                   <li class="drop-down__li"><a href="#" class="drop-down__link">Tees/Tank tops</a></li>
+                                   <li class="drop-down__li"><a href="#" class="drop-down__link">Shirts/Polos</a></li>
+                                   <li class="drop-down__li"><a href="#" class="drop-down__link">Sweaters</a></li>
+                                   <li class="drop-down__li"><a href="#" class="drop-down__link">Sweatshirts/Hoodies</a></li>
+                                   <li class="drop-down__li"><a href="#" class="drop-down__link">Blazers</a></li>
+                                   <li class="drop-down__li"><a href="#" class="drop-down__link">Jackets/vests </a></li>
+                                </ul>
+                           </div>
+                        </div>
                     </div>
                     <input class="header_input" type="text" placeholder="Search for Item...">
                     <!--<button><img src="img/search.png" alt="search"></button>-->
                 </form>
-                <div class="drop-down">
-                           <div class="drop-down__flex">
-                               <h3 class="drop-down__h3">Women</h3>
-                                <ul class="drop-down__ul">
-                                   <li><a href="#" class="drop-down__link">Dresses</a></li>
-                                   <li><a href="#" class="drop-down__link">Tops</a></li>
-                                   <li><a href="#" class="drop-down__link">Sweaters/Knits</a></li>
-                                   <li><a href="#" class="drop-down__link">Jackets/Coats</a></li>
-                                   <li><a href="#" class="drop-down__link">Blazers</a></li>
-                                   <li><a href="#" class="drop-down__link">Denim</a></li>
-                                   <li><a href="#" class="drop-down__link">Leggings/Pants</a></li>
-                                   <li><a href="#" class="drop-down__link">Skirts/Shorts</a></li>
-                                   <li><a href="#" class="drop-down__link">Accessories </a></li>
-                                </ul>
-                           </div>
-                           <div class="drop-down__flex">
-                               <h3 class="drop-down__h3">Men</h3>
-                                <ul class="drop-down__ul">
-                                   <li><a href="#" class="drop-down__link">Tees/Tank tops</a></li>
-                                   <li><a href="#" class="drop-down__link">Shirts/Polos</a></li>
-                                   <li><a href="#" class="drop-down__link">Sweaters</a></li>
-                                   <li><a href="#" class="drop-down__link">Sweatshirts/Hoodies</a></li>
-                                   <li><a href="#" class="drop-down__link">Blazers</a></li>
-                                   <li><a href="#" class="drop-down__link">Jackets/vests </a></li>
-                                </ul>
-                           </div>
-                        </div>
             </div>
             <div class="header__block">
-                <a href="#"><img src="img/cart.svg" alt="cart" class="cart-img"></a>
+                <div class="drop-down-cart">
+                   <a href="#"><img src="img/cart.svg" alt="cart" class="cart-img"></a>
+                    <div class="drop-cart invisible">
+                    <div class="drop-cart_item">
+                        <img src="img/drop-cart_1.png" alt="img" class="drop-cart_img">
+                        <div class="drop-cart_desc">
+                            <h3>Rebox Zane</h3>
+                            <div class="drop-cart_rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <p class="drop-cart_price">1 <span> x </span> $250</p>
+                        </div>
+                        <a href="#"><i class="fas fa-times-circle fa-times-circle-miniCart"></i></a>
+                    </div>
+                    <div class="drop-cart_item">
+                        <img src="img/drop-cart_2.png" alt="img" class="drop-cart_img">
+                        <div class="drop-cart_desc">
+                            <h3>Rebox Zane</h3>
+                            <div class="drop-cart_rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <p class="drop-cart_price">1 <span> x </span> $250</p>
+                        </div>
+                       <a href="#"><i class="fas fa-times-circle fa-times-circle-miniCart"></i></a>
+                    </div>
+                    <h1 class="drop-cart_total">TOTAL <span>$500.00</span></h1>
+                    <a href="C:/Users/Nina/Documents/GitHub/shustrushka/JS_Advanced/Project/Checkout.html" class="checkout-button">checkout</a>
+                    <a href="C:/Users/Nina/Documents/GitHub/shustrushka/JS_Advanced/Project/Cart.html" class="goToCart-button">Go to cart</a>
+                   </div>
+                </div>
                 <a href="#" class="button">My Account</a>
             </div>
         </div>
@@ -290,7 +327,7 @@
                </div>
            </li>
            <li class="menu__list"><a href="#" class="menu__link">Hot Deals</a>
-               <div class="drop drop_mega-menu">
+               <div class="drop drop_mega-menu drop_hot_deals">
                    <div class="drop__flex">
                        <h3 class="drop__h3">Women</h3>
                        <ul class="drop__ul">
