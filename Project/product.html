@@ -478,7 +478,16 @@
                 </div>
             </div>
             
-            <div class="product__main__box">
+            <div class="product__main__box" id="app">
+                <div class="product__main__items" v-for="el of products" :key="el.id">
+                    <a href="C:/Users/Nina/Documents/GitHub/shustrushka/JS_Advanced/Project/singlepage.html" class="product__items__link">
+                        <img class="product_image" :src="el.img" :alt=el.title></a>
+                        <div class="product__content">
+                            <a href="#" class="product__name">{{el.title}}</a>
+                            <p class="product__price">{{el.price}}</p>
+                        </div>
+                        <a href="#" class="product__add">Add to Cart</a>
+                </div>
             </div>
         </div>
     </div>
