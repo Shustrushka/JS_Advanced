@@ -8,7 +8,8 @@
     <script src="https://kit.fontawesome.com/a72672ab21.js"></script>
 </head>
 <body>
-    <header class="header">
+    <div id="app">
+        <header class="header">
         <div class="container header__content">
             <div class="header__block">
                 <a href="index.html" class="logo">
@@ -51,13 +52,13 @@
             </div>
             <div class="header__block">
                 <div class="drop-down-cart">
-                   <a href="#"><img src="img/cart.svg" alt="cart" class="cart-img"></a>
-                    <div class="drop-cart "> <!-- добавить позже Invisible классу -->
+                   <a href="#"><img src="img/cart.svg" alt="cart" class="cart-img" @click="showCart = !showCart"></a>
+                    <div class="drop-cart" v-show="showCart">
                         <div class="drop-cart_top">
-                            <!--<div class="drop-cart_item">
-                                <img src="img/drop-cart_1.png" alt="img" class="drop-cart_img">
+                            <div class="drop-cart_item" v-for="item of cartItems" :key="item.id">
+                                <img :src="imgCart" :alt="item.title" class="drop-cart_img">
                                     <div class="drop-cart_desc">
-                                        <h3>Rebox Zane</h3>
+                                        <h3>{{item.title}}</h3>
                                         <div class="drop-cart_rating">
                                             <i class="fas fa-star"></i>
                                             <i class="fas fa-star"></i>
@@ -65,38 +66,24 @@
                                             <i class="fas fa-star"></i>
                                             <i class="fas fa-star-half-alt"></i>
                                         </div>
-                                        <p class="drop-cart_price">1 <span> x </span> $250</p>
+                                        <p class="drop-cart_price">{{item.quantity}}<span> x </span> ${{item.price}}</p>
                                     </div>
-                                <a href="#"><i class="fas fa-times-circle fa-times-circle-miniCart"></i></a>
+                                <a href="#" @click="remove(item)"><i class="fas fa-times-circle fa-times-circle-miniCart"></i></a>
                             </div>
-                        <div class="drop-cart_item">
-                            <img src="img/drop-cart_2.png" alt="img" class="drop-cart_img">
-                            <div class="drop-cart_desc">
-                                <h3>Rebox Zane</h3>
-                                <div class="drop-cart_rating">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star-half-alt"></i>
-                                </div>
-                                <p class="drop-cart_price">1 <span> x </span> $250</p>
-                            </div>
-                            <a href="#"><i class="fas fa-times-circle fa-times-circle-miniCart"></i></a>
-                        </div> -->
                         </div>
                         <div class="drop-cart_bottom">
-                            <h1 class="drop-cart_total">TOTAL <span>$500.00</span></h1>
-                            <a href="C:/Users/Nina/Documents/GitHub/shustrushka/JS_Advanced/Project/Checkout.html" class="checkout-button">checkout</a>
-                            <a href="C:/Users/Nina/Documents/GitHub/shustrushka/JS_Advanced/Project/Cart.html" class="goToCart-button">Go to cart</a>
+                            <p v-if="!cartItems.length">Cart is empty</p>
+                            <h1 class="drop-cart_total" v-if="cartItems.length">TOTAL <span>$350</span></h1> <!--написать функцию amount и воткнуть сюда-->
+                            <a href="C:/Users/Nina/Documents/GitHub/shustrushka/JS_Advanced/Project/Checkout.html" class="checkout-button" v-if="cartItems.length">checkout</a>
+                            <a href="C:/Users/Nina/Documents/GitHub/shustrushka/JS_Advanced/Project/Cart.html" class="goToCart-button" v-if="cartItems.length">Go to cart</a>
                         </div>
                    </div>
                 </div>
                 <a href="#" class="button">My Account</a>
             </div>
         </div>
-    </header>
-    <nav>
+        </header>
+        <nav>
         <ul class="menu">
            <li class="menu__list"><a href="index.html" class="menu__link">Home</a></li>
            <li class="menu__list"><a href="#" class="menu__link">Man</a>
@@ -376,14 +363,14 @@
                </div>
            </li> 
         </ul>
-    </nav>
-    <div class="new-arrivals">
+        </nav>
+        <div class="new-arrivals">
        <div class="new-arrivals-cont container">
         <h1>New Arrivals </h1>
         <p>Home / Men / <span>New Arrivals</span></p>
        </div>
-    </div>
-    <div class="product container">
+        </div>
+        <div class="product container">
         <div class="product__details">
             <details open class="product__summary">
                 <summary class="summary__neading">Category</summary>
@@ -478,8 +465,8 @@
                 </div>
             </div>
             
-            <div class="product__main__box" id="app">
-                <div class="product__main__items" v-for="el of products" :key="el.id">
+            <div class="product__main__box">
+                <div class="product__main__items" v-for="el of filtered" :key="el.id">
                     <a href="C:/Users/Nina/Documents/GitHub/shustrushka/JS_Advanced/Project/singlepage.html" class="product__items__link">
                         <img class="product_image" :src="el.img" :alt=el.title></a>
                         <div class="product__content">
@@ -490,8 +477,8 @@
                 </div>
             </div>
         </div>
-    </div>
-    <div class="free-delivery">
+        </div>
+        <div class="free-delivery">
         <div class="free-delivery__block container">
             <article class="free-delivery_art">
                 <img src="img/art_1.svg" alt="art1">
@@ -515,8 +502,8 @@
                 </div>
             </article>
         </div>
-    </div>
-    <footer class="footer">
+        </div>
+        <footer class="footer">
         <section class="subscribe">
         <div class="subscribe_left">
             <img class="subscribe_logo" src="C:/Shustra/Geekbrains/Frontend%20development/HTML%20CSS%20Advanced/img\sub.png" alt="sub">
@@ -598,7 +585,8 @@
             </div>
         </div>
         </div>
-    </footer>
+        </footer>
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script defer src="js\product.js"></script>
 </body>
