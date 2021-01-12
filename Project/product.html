@@ -53,7 +53,13 @@
             <div class="header__block">
                 <div class="drop-down-cart">
                    <a href="#"><img src="img/cart.svg" alt="cart" class="cart-img" @click="showCart = !showCart"></a>
-                    <div class="drop-cart" v-show="showCart">
+                    <cart 
+                        :cart-items="cartItems" 
+                        :img="imgCart" 
+                        :visibility="showCart"
+                        @remove="remove"
+                    ></cart>
+                   <!-- <div class="drop-cart" v-show="showCart">
                         <div class="drop-cart_top">
                             <div class="drop-cart_item" v-for="item of cartItems" :key="item.id">
                                 <img :src="imgCart" :alt="item.title" class="drop-cart_img">
@@ -73,11 +79,11 @@
                         </div>
                         <div class="drop-cart_bottom">
                             <p v-if="!cartItems.length">Cart is empty</p>
-                            <h1 class="drop-cart_total" v-if="cartItems.length">TOTAL <span>$350</span></h1> <!--написать функцию amount и воткнуть сюда-->
+                            <h1 class="drop-cart_total" v-if="cartItems.length">TOTAL <span>$350</span></h1> 
                             <a href="C:/Users/Nina/Documents/GitHub/shustrushka/JS_Advanced/Project/Checkout.html" class="checkout-button" v-if="cartItems.length">checkout</a>
                             <a href="C:/Users/Nina/Documents/GitHub/shustrushka/JS_Advanced/Project/Cart.html" class="goToCart-button" v-if="cartItems.length">Go to cart</a>
                         </div>
-                   </div>
+                   </div> -->
                 </div>
                 <a href="#" class="button">My Account</a>
             </div>
@@ -464,8 +470,12 @@
                    
                 </div>
             </div>
-            
-            <div class="product__main__box">
+                <products 
+                    :products="filtered" 
+                    :img="imgCatalog" 
+                    @add-product="addProduct"
+                ></products>
+            <!-- <div class="product__main__box">
                 <div class="product__main__items" v-for="el of filtered" :key="el.id">
                     <a href="C:/Users/Nina/Documents/GitHub/shustrushka/JS_Advanced/Project/singlepage.html" class="product__items__link">
                         <img class="product_image" :src="el.img" :alt=el.title></a>
@@ -475,7 +485,7 @@
                         </div>
                         <a href="#" class="product__add" @click="addProduct(el)">Add to Cart</a>
                 </div>
-            </div>
+            </div> -->
         </div>
         </div>
         <div class="free-delivery">
@@ -588,6 +598,9 @@
         </footer>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    
+    <script src="js/productsComponent.js"></script>
+    <script src="js/cartComponent.js"></script>
     <script defer src="js\product.js"></script>
 </body>
 </html>

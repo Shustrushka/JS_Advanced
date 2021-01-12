@@ -7,6 +7,7 @@ const app = new Vue({
         showCart: false,
         cartUrl: '/getBasket.json',
         imgCart: 'https://via.placeholder.com/72x85',
+        imgCatalog: 'https://github.com/Shustrushka/static/raw/master/img/product_1.png',
         cartItems: [],
         catalogUrl: '/catalogData.json',
         products: [],
