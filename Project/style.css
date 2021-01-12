@@ -1933,11 +1933,22 @@ transform: scale(1.15);
 .drop-down-cart {
     position: relative;
 }
+.drop-down-cart a{
+    display: block;
+}
 /* .drop-down-cart:hover .drop-cart {
     display: block;
 } */
 .drop-down__li {
     line-height: 30px;
 }
-
+.drop-cart_bottom p{
+    margin-top: 15px;
+    margin-left: 15px;
+    margin-bottom: 15px;
+    color: #585858;
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
 
