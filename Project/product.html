@@ -53,7 +53,7 @@
             <div class="header__block">
                 <div class="drop-down-cart">
                    <a href="#"><img src="img/cart.svg" alt="cart" class="cart-img" @click="showCart = !showCart"></a>
-                    <!-- <div class="drop-cart" v-show="showCart">
+                    <div class="drop-cart" v-show="showCart">
                         <div class="drop-cart_top">
                             <div class="drop-cart_item" v-for="item of cartItems" :key="item.id">
                                 <img :src="imgCart" :alt="item.title" class="drop-cart_img">
@@ -73,9 +73,9 @@
                         </div>
                         <div class="drop-cart_bottom">
                             <p v-if="!cartItems.length">Cart is empty</p>
-                            <h1 class="drop-cart_total" v-if="cartItems.length">TOTAL <span>$350</span></h1> <!--написать функцию amount и воткнуть сюда-->
-                            <a href="C:/Users/Nina/Documents/GitHub/shustrushka/JS_Advanced/Project/Checkout.html" class="checkout-button" v-if="cartItems.length">checkout</a>
-                            <a href="C:/Users/Nina/Documents/GitHub/shustrushka/JS_Advanced/Project/Cart.html" class="goToCart-button" v-if="cartItems.length">Go to cart</a>
+                            <h1 class="drop-cart_total" v-if="cartItems.length">TOTAL <span>$350</span></h1>
+                            <a href="C:\Users\BlochMa\Desktop\Nina\JavaScript\JS_Advanced\Project\Checkout.html" class="checkout-button" v-if="cartItems.length">checkout</a>
+                            <a href="C:\Users\BlochMa\Desktop\Nina\JavaScript\JS_Advanced\Project\Cart.html" class="goToCart-button" v-if="cartItems.length">Go to cart</a>
                         </div>
                    </div>
                 </div>
