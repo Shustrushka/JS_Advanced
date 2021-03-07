@@ -456,25 +456,28 @@
                         <p>Sort By</p><a href="#">Name</a>
                    </div>
                    <div class="sortby_form">
-                        <form action="#" method="POST" class="search-form" @submit.prevent="filter">
+                       <filter-el></filter-el>
+                        <!-- <form action="#" method="POST" class="search-form" @submit.prevent="filter">
                             <input type="text" class="search-field" v-model="userSearch">
                             <button class="btn-search" type="submit"><i class="fas fa-search"></i></button>
-                        </form> 
+                        </form>  -->
                    </div>
                    
                 </div>
             </div>
             
             <div class="product__main__box">
-                <div class="product__main__items" v-for="el of filtered" :key="el.id">
-                    <a href="C:/Users/Nina/Documents/GitHub/shustrushka/JS_Advanced/Project/singlepage.html" class="product__items__link">
+                <products ref=products></products>
+                <!-- <div class="product__main__items" v-for="el of filtered" :key="el.id">
+                    <a href="C:\Users\BlochMa\Desktop\Nina\JavaScript\JS_Advanced\Project\singlepage.html" class="product__items__link">
                         <img class="product_image" :src="el.img" :alt=el.title></a>
                         <div class="product__content">
                             <a href="#" class="product__name">{{el.title}}</a>
                             <p class="product__price">{{el.price}}</p>
                         </div>
                         <a href="#" class="product__add" @click="addProduct(el)">Add to Cart</a>
-                </div>
+                </div> -->
+                <error ref="error"></error>
             </div>
         </div>
         </div>
@@ -506,7 +509,7 @@
         <footer class="footer">
         <section class="subscribe">
         <div class="subscribe_left">
-            <img class="subscribe_logo" src="C:/Shustra/Geekbrains/Frontend%20development/HTML%20CSS%20Advanced/img\sub.png" alt="sub">
+            <img class="subscribe_logo" src="C:\Users\BlochMa\Desktop\Nina\JavaScript\JS_Advanced\Project\img\sub.png" alt="sub">
             <div class="subscribe_left_text">
                 <p>“Vestibulum quis porttitor dui! Quisque viverra nunc mi, a pulvinar purus condimentum a. Aliquam condimentum mattis neque sed pretium”</p>
                 <h5><span>Bin Burhan </span>Dhaka, Bd</h5>
@@ -589,5 +592,9 @@
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script defer src="js\product.js"></script>
+    <script src="js/ErrorComp.js"></script>
+    <script src="js/FilterComp.js"></script>
+    <script src="js/ProductComp.js"></script>
+    <script src="js/CartComp.js"></script>
 </body>
 </html>
